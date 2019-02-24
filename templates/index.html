@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link href="static/style.css" rel="stylesheet" type="text/css">
+    <title>名前募集中</title>
+</head>
+<body>
+    <h2>Scratchのプロジェクトファイル(.sb3)をアップロードしてください</h2>
+    {% for err in errs %}
+        <p class="err">{{ err }}</p>
+    {% endfor %}
+    <form method="post" action="/send" enctype="multipart/form-data">
+        <input type="file" name="uploaded_file" />
+        <input type="submit" value="アップロード">
+    </form>
+</body>
+</html>
