@@ -47,7 +47,7 @@ def send():
                                 for filename in os.listdir(extract_dir):
                                         print(filename)
                                         exportfile.write(os.path.join(extract_dir,filename), arcname=filename)
-                        return send_file(out.name,as_attachment=True)
+                        return send_file(out.name,as_attachment=True,attachment_filename='New_'+uploaded_file.filename)
                     else:
                         return 'Error:Not exits /project.json'
         else:
