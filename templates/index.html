@@ -3,26 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <link href="static/style.css" rel="stylesheet" type="text/css">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css"/>
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+
     <title>名前募集中</title>
 </head>
 <body>
-    <h2>Scratchのプロジェクトファイル(.sb3)をアップロードしてください</h2>
-    {% for err in errs %}
-        <p class="err">{{ err }}</p>
-    {% endfor %}
-    <form method="post" action="/send" enctype="multipart/form-data">
-        <input type="file" name="uploaded_file" />
-        <input type="submit" value="アップロード">
-    </form>
-    <h2>使用方法</h2>
-    <ul>
-        <li>Scratch3.0で中身が表示されないプロジェクトのオフラインデータ(.sb3)をダウンロードする。</li>
-        <li>上の『ファイルを選択』を押してダウンロードしたsb3ファイルを選択し『アップロード』ボタンを押してください。</li>
-        <li>するとすぐにダウンロード画面が出てくるのでそのままダウンロードし、改めてScratchにアップロードすると中身が表示されています。</li>
-    </ul>
-    <h2>その他</h2>
-    <p>毎週月曜深夜時間帯（AM1:00~AM5:00）はメンテナンスのため一時サーバーを停止することがございます。あらかじめご了承ください。</p>
-    <p>不具合・ご意見等ありましたら下記メールアドレスへご連絡ください。</p>
-    <address><a href="mailto:ryota-develop@outlook.com">ryota-develop@outlook.com</a></address>
+{% for err in errs %}
+    <p class="err">{{ err }}</p>
+{% endfor %}
+<div class="wrapper uk-overlay-primary">
+    <div class="uk-position-center">
+        <h2>Scratchのプロジェクトファイル(.sb3)をアップロードしてください</h2>
+        <form method="post" action="/send" enctype="multipart/form-data">
+            <div class="uk-margin" uk-margin>
+                <div uk-form-custom="target: true">
+                    <input type="file" name="uploaded_file">
+                    <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+                </div>
+                <input type="submit" class="uk-button uk-button-primary"/>
+            </div>
+        </form>
+        <h2>使用方法</h2>
+        <ul>
+            <li>Scratch3.0で中身が表示されないプロジェクトのオフラインデータ(.sb3)をダウンロードする。</li>
+            <li>上の『ファイルを選択』を押してダウンロードしたsb3ファイルを選択し『アップロード』ボタンを押してください。</li>
+            <li>するとすぐにダウンロード画面が出てくるのでそのままダウンロードし、改めてScratchにアップロードすると中身が表示されています。</li>
+        </ul>
+        <h2>その他</h2>
+        <p>毎週月曜深夜時間帯（AM1:00~AM5:00）はメンテナンスのため一時サーバーを停止することがございます。あらかじめご了承ください。</p>
+        <p>不具合・ご意見等ありましたら下記メールアドレスへご連絡ください。</p>
+        <address><a href="mailto:ryota-develop@outlook.com">ryota-develop@outlook.com</a></address>
+    </div>
 </body>
 </html>
