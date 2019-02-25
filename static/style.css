@@ -1,3 +1,19 @@
 .err{
     color: #F00;
 }
+.upload_form{
+    text-align: center;
+}
+html,body{
+    magin:0;
+    height: 100%;
+}
+body{
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+}
+.wrapper{
+    height: 100%;
+}
